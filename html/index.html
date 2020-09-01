@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态背景实现展示页面</title>
+<!--    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>-->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/LoignCss.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/mian.js"></script>
+
+
+</head>
+<body>
+
+<div class="header-top" >
+    <div class="index-logo">
+
+    </div>
+<div class="hearder-nav " >
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!--小屏幕导航按钮菜单栏-->
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand">首页导航</a>
+                <!--小屏幕导航按钮菜单栏-->
+                <div class="dropdown">
+                    <a data-toggle="dropdown" href="">
+                        <button class="navbar-toggle"  data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>  </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#home">公司首页</a></li>
+                        <li><a href="#info">企业简介</a></li>
+                        <li><a href="#show">特色介绍</a></li>
+                        <li><a href="#products">最新产品</a></li>
+                        <li><a href="#app">区域代理</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--大屏幕导航-->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a href="#home">公司首页</a>
+                    </li>
+                    <li>
+                        <a href="#info">企业简介</a>
+                    </li>
+                    <li>
+                        <a href="#show">特色介绍</a>
+                    </li>
+                    <li>
+                        <a href="#products">最新产品</a>
+                    </li>
+                    <li>
+                        <a href="#app">区域代理</a>
+                    </li>
+                    <li class="login_reg_btn">
+                        <span><button type="button" class="top_login btn btn-default btn-sm" data-toggle="modal" data-target="#myModal_login" >登录</button></span>
+                        <span><button type="button" class="top_reg btn btn-default btn-sm" data-toggle="modal" data-target="#myModal_reg">注册</button></span>
+
+                    </li>
+                </ul>
+
+
+
+            </div>
+            <!--大屏幕导航-->
+        </div>
+    </nav>
+</div>
+</div>
+
+<div class="main_content ">
+<div class="container ">
+    <div class="pic_box">
+        <img src="../video/37.png">
+    </div>
+    <br><br>
+<div class=" input_sty">
+    <input type="text" class="form-control input_sty">
+</div>
+    <span class="  glyphicon glyphicon-search" style="z-index:2"></span>
+</div>
+</div>
+
+
+
+
+
+<footer class="footer navbar-fixed-bottom" >
+<div class="container">
+    <p  class="footer_style">Copyright © 2020 Tonaya rights reserved.</p>
+
+</div>
+</footer>
+<div class="main">
+    <div>
+<video autoplay="autoplay" loop="loop" muted="muted" class="bgvideo" >
+    <source src="../video/bgVideo.mp4" type="video/mp4" />
+</video>
+</div>
+</div>
+
+
+
+<div class="cover"></div>
+
+<!--登录注册  bootstrap模态框-->
+<div class="form-box modal fade" style="display:none"  id="myModal_login" role="dialog">
+    <form class="front " id="top_login">
+        <div class="form-wrapper">
+                <div>
+                    <span class="login_close"  data-dismiss="modal">X</span>
+                </div>
+            <div class="header">
+                Login
+            </div>
+            <div class="input-wrapper">
+                <div class="content-wrapper">
+                    <input type="text" name="Uname" placeholder="username" class="conten-items"  />
+                </div>
+
+                <div class="content-wrapper">
+                    <input type="password" name="Upaw" placeholder="password" class="conten-items" />
+                </div>
+                <div class="action">
+                    <div class="btn" style="color: white" >login</div>
+                </div>
+                <div>
+                    <p style="margin-top: 40px ;color: white;" >If you don't have account.Please</p>
+                    <p style="color: white">Click here to <a href="#" id="signup" style="color: #0e92b3" > Regist </a></p>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+
+</div>
+
+<div class="form-box modal fade" style="display:none"  id="myModal_reg" role="dialog">
+    <form class="front " id="top_reg">
+        <div class="form-wrapper">
+                <div>
+                    <span class="login_close" data-dismiss="modal">X</span>
+                </div>
+            <div class="header">
+                Regist
+            </div>
+            <div class="input-wrapper">
+                <div class="content-wrapper">
+                    <input type="text" name="Uname" placeholder="username" class="conten-items"  />
+                </div>
+
+                <div class="content-wrapper">
+                    <input type="password" name="Upaw" placeholder="password" class="conten-items" />
+                </div>
+                <div class="action">
+                    <div class="btn" style="color: white" >Regist</div>
+                </div>
+                <div>
+                    <p style="margin-top: 40px ;color: white;" >If you don't have account.Please</p>
+                    <p style="color: white">Click here to <a href="#" id="regist" style="color: #0e92b3" > Login </a></p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

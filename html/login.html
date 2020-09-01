@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面设计</title>
+    <link rel="stylesheet" href="../css/LoignCss.css">
+    <style>
+        .form-box{
+
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            const btn=document.getElementById("signup");
+            const formbox=document.getElementsByClassName("form-box");
+
+            btn.addEventListener('click',()=>{
+                let deg=180;
+                $(".form-box").style.transform='rotateY(${deg}deg)';
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="form-box">
+<form class="front">
+<div class="form-wrapper">
+<!--    <div>-->
+<!--        <span class="login_close" id="close_minilogin">X</span>-->
+<!--    </div>-->
+    <div class="header">
+        Login
+
+    </div>
+    <div class="input-wrapper">
+        <div class="content-wrapper">
+            <input type="text" name="Uname" placeholder="username" class="conten-items"  />
+        </div>
+
+        <div class="content-wrapper">
+            <input type="password" name="Upaw" placeholder="password" class="conten-items" />
+        </div>
+        <div class="action">
+            <div class="btn" style="color: white" >login</div>
+        </div>
+        <div>
+            <p style="margin-top: 40px ;color: white;" >If you don't have account.Please</p>
+            <p style="color: white">Click here to <a href="#" id="signup" style="color: #0e92b3"  > Sign up </a></p>
+        </div>
+    </div>
+
+
+</div>
+</form>
+
+<form class=" back" >
+    <div class="form-wrapper">
+        <!--    <div>-->
+        <!--        <span class="login_close" id="close_minilogin">X</span>-->
+        <!--    </div>-->
+        <div class="header">
+            Regist
+
+        </div>
+        <div class="input-wrapper">
+            <div class="content-wrapper">
+                <input type="text" name="Uname" placeholder="username" class="conten-items"  />
+            </div>
+
+            <div class="content-wrapper">
+                <input type="password" name="Upaw" placeholder="password" class="conten-items" />
+            </div>
+            <div class="action">
+                <div class="btn" style="color: white">Regist</div>
+            </div>
+            <div>
+                <p style="margin-top: 40px ;color: white">If you don't have account.Please</p>
+                <p style="color: white">Click here to <a  href="#" id="login" style="color: #0e92b3">Log in</a></p>
+            </div>
+        </div>
+
+
+    </div>
+</form>
+</div>
+
+<div class="icon-wrapper">
+    <i class="iconfont-weixin"></i>
+</div>
+
+
+</body>
+</html>

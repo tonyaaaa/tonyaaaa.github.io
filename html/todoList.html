@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+*{
+    margin:0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    text-align: center;
+    background-color: #E8F0DB;
+}
+h1{
+    position: relative;
+    color: gray;
+    margin:20px auto;
+
+}
+        .container{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+
+        }
+
+        .box{
+            width: 100%;
+            height:30px;
+            background-color: #ffffff;
+            border: 5px solid #761c19;
+        }
+        .box span{
+            float: left;
+            margin-left: 5px;
+            font-size: 10px;
+            line-height: 30px;
+        }
+        .box #input{
+            float: right;
+            width:88%;
+            height: 28px;
+            border: none;
+            /*选中后会出现边框*/
+            outline: none;
+        }
+
+        .box2{
+        width:100%;
+        background-color: white;
+        }
+        .box2  .item{
+            width:100%;
+            height: 30px;
+            color: snow;
+            backdrop-filter:rgba(248, 165, 42, 0.6);
+            border:none;
+            color: black;
+        }
+
+        .box2 ul .item .infor{
+            display: inline;
+            margin-left: 15px;
+            font-size: 18px;
+            line-height: 30px;
+        }
+        .box2 ul .item .del{
+            float: right;
+            margin-right: 10px;
+            font-size: 20px;
+            line-height: 30px;
+            user-select: none;
+
+        }
+        .change{
+            display: none;
+        }
+    </style>
+
+
+</head>
+<body>
+<h1>todoList</h1>
+<div class="container">
+    <div class="box">
+        <span  id="hidden"> v </span>
+        <input  type="text" id="input" value="">
+    </div>
+    <div class="box2">
+        <ul id="list">
+
+        </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    let oinput=document.getElementById("input");
+    let oUl=document.getElementById("list");
+    let oLi=document.getElementsByClassName("item")
+    let oHidden=document.getElementById("hidden");
+    document.onkeydown=function (ev) {
+        ev=ev|| window.event;
+        if(ev.keyCode==13)
+        {
+            let value=oinput.value;
+            if(value==""){
+                alert("输入框不为空!");
+            }
+            else{
+                let li=document.createElement("li");
+                let p=document.createElement("p");
+                let span=document.createElement("span");
+                li.className="item";
+                p.className="infor";
+                span.className="del";
+
+                p.innerText=value;
+                span.innerText='x';
+                //增加
+                li.appendChild(p);
+                li.appendChild(span);
+                oUl.appendChild(li);
+                oinput.value="";
+                // span.innerText='x';删除功能
+                span.onclick=function () {
+                    oUl.removeChild(this.parentNode);
+                }
+                //<span  id="hidden"> v </span>显示|隐藏下拉列表
+                //toggle:允许子孙元素使用取值序列中的值循环替换继承而来的值。
+                oHidden.onclick=function () {
+                    oUl.classList.toggle('change');
+		
+                }
+            }
+        }
+
+    }
+
+    function select() {
+        //input的事件监听事件
+        oinput.addEventListener('keyup',function (e) {
+            //target返回事件的目标节点，触发该事件节点
+            //e.target.value 拿到event事件的目标节点值
+            let str=e.target.value;
+            //正则匹配 'g'全局匹配
+            let reg=new RegExp('('+str+')','g');
+            //遍历li，匹配reg,并替换颜色
+            for(var i=0;i<oLi.length;i++){
+                let one=oLi[i].getElementsByTagName('p')[0];
+                let newStr=one.innerText.replace(reg,'<font color="red">$1</font>');
+                //one.innerText.indexOf(str) !==-1
+                // ==》if( one.innerText.indexOf(str) ==-1 ){one.innerHtml.style.dispaly='none'}
+                //==>else{one.innerHTML=newStr}
+                if(one.innerText.indexOf(str) !==-1){
+                    one.innerHTML=newStr;
+                }
+            }
+        });
+
+    }
+    select();
+
+</script>
+</body>
+</html>
